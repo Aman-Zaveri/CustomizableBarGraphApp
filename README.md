@@ -1,3 +1,13 @@
+## How To Use It
+
+The values for both inputs are seperated by just a comma. The data values input takes in real numbers while the label values input takes in any non-empty input. Both inputs should have the same amount of values, else the output result will be askewed. 
+
+Once both inputs have the same amount of values, the submit button can be pressed which will create the bar graph. The axis will change based on the range of the data values.
+
+In order to change the color of any aspect of the bar graph, use the 3 color choosers, each with their respective job. 
+
+To see the app in action, check out the [vercel deployed website](https://customizable-bar-graph-app-amanzaveri.vercel.app/).
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

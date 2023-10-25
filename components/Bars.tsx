@@ -7,6 +7,7 @@ interface BarProps {
   theme?: string;
   highlight?: string;
   text?: string;
+  keyIndex: number;
 }
 
 const Bars: React.FC<BarProps> = ({
@@ -15,7 +16,8 @@ const Bars: React.FC<BarProps> = ({
   data,
   theme,
   highlight,
-  text
+  text,
+  keyIndex,
 }) => {
   const [hovered, setHovered] = useState(false);
 
@@ -30,26 +32,33 @@ const Bars: React.FC<BarProps> = ({
   return (
     <div
       className="flex"
+      key={keyIndex}
       style={{
         gap: "2em",
         alignItems: "center",
-        flexDirection:  "row"
+        flexDirection: "row",
       }}
     >
-      <span className="w-5" style={{color : `${text}`}}>{label}</span>
+      <span className="w-5" style={{ color: `${text}` }}>
+        {label}
+      </span>
       <div
         className="flex justify-center items-center rounded-2xl border-neutral-100 border border-solid"
         style={{
-          color : `${text}`,
+          color: `${text}`,
           width: `${scaledData}%`,
-          height: (hovered ? "2.2em" : "2em"),
+          height: hovered ? "2.2em" : "2em",
           backgroundColor: hovered ? `${highlight}` : `${theme}`,
           transition: "0.2s ease-in-out all",
         }}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        {hovered && <span className="value" style={{color : `${text}`}}>{data}</span>}
+        {hovered && (
+          <span className="value" style={{ color: `${text}` }}>
+            {data}
+          </span>
+        )}
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ interface BarProps {
   theme?: string;
   highlight?: string;
   text?: string;
-  keyIndex: number;
+  key: number;
 }
 
 const Bars: React.FC<BarProps> = ({
@@ -17,7 +17,7 @@ const Bars: React.FC<BarProps> = ({
   theme,
   highlight,
   text,
-  keyIndex,
+  key,
 }) => {
   const [hovered, setHovered] = useState(false);
 
@@ -32,7 +32,7 @@ const Bars: React.FC<BarProps> = ({
   return (
     <div
       className="flex"
-      key={keyIndex}
+      key={key}
       style={{
         gap: "2em",
         alignItems: "center",

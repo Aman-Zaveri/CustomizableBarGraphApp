@@ -36,7 +36,7 @@ const BarChart: React.FC<BarChartProps> = ({
           theme={theme}
           highlight={highlight}
           text={text}
-          keyIndex={index}
+          key={index}
         />
       ))}
     </div>
